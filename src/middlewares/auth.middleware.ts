@@ -43,14 +43,11 @@ export const requireAuth: RequestHandler = async (req, res, next) => {
 };
 
 // Middleware to check admin role
-export const requireAdmin = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const requireAdmin: RequestHandler = async (req, res, next) => {
   try {
     if (!req.user) {
-      return res.status(401).json({ error: "Unauthorized - No user found" });
+      res.status(401).json({ error: "Unauthorized - No user found" });
+      return;
     }
 
     const { uid } = req.user;
