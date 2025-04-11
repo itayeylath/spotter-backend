@@ -3,7 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import compression from "compression";
 import { connectDB } from "./config/database";
-import { errorHandler } from "./middlewares/error.middleware";
+import errorHandler from "./middlewares/error.middleware";
 import todoRoutes from "./routes/todo.routes";
 import adminRoutes from "./routes/admin.routes";
 import { logger } from "./utils/logger";

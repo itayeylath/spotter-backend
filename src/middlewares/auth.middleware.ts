@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction, RequestHandler } from "express";
 import * as admin from "firebase-admin";
 import { logger } from "../utils/logger";
 
@@ -23,17 +23,12 @@ declare global {
 }
 
 // Middleware to verify Firebase token
-export const requireAuth = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const requireAuth: RequestHandler = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith("Bearer ")) {
-      return res
-        .status(401)
-        .json({ error: "Unauthorized - No token provided" });
+      res.status(401).json({ error: "Unauthorized - No token provided" });
+      return;
     }
 
     const token = authHeader.split("Bearer ")[1];
