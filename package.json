@@ -1,0 +1,81 @@
+{
+  "name": "to-do-app-backend",
+  "version": "1.0.0",
+  "description": "Cross-platform To-Do app backend with user and admin roles",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts",
+    "docker:build": "docker build -t todo-app-backend .",
+    "docker:run": "docker run -p 3000:3000 todo-app-backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itayeylath/to-do-app-backend.git"
+  },
+  "keywords": [
+    "todo",
+    "express",
+    "typescript",
+    "mongodb",
+    "firebase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itayeylath/to-do-app-backend/issues"
+  },
+  "homepage": "https://github.com/itayeylath/to-do-app-backend#readme",
+  "dependencies": {
+    "@sentry/node": "^9.12.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "firebase-admin": "^13.2.0",
+    "mongoose": "^8.13.2",
+    "winston": "^3.17.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.5.0",
+    "supertest": "^7.1.0",
+    "ts-jest": "^29.3.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__tests__/setup.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/__tests__/**/*"
+    ]
+  }
+}
