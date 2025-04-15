@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.json({ message: "Todo App API is running" });
+  res.json({ message: "Spotter backend is running" });
 });
 
 app.listen(port, () => {

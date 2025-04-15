@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.json({ message: "Todo App API is running" });
+  res.json({ message: "Spotter backend is running" });
 });
 
 // Admin routes
