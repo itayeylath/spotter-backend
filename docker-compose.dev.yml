@@ -2,16 +2,18 @@ version: "3.8"
 
 services:
   app:
-    container_name: spotter-backend
+    container_name: spotter-backend-dev
     build:
       context: .
-      dockerfile: Dockerfile
-    command: npm run dev
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
-    env_file: .env
+      - "9229:9229" # for debugging
+    env_file: .env.development
     volumes:
       - .:/app
       - /app/node_modules
       - ./logs:/app/logs
+    environment:
+      - NODE_ENV=development
     restart: unless-stopped

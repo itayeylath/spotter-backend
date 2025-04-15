@@ -1,7 +1,7 @@
 {
-  "name": "todo-app-backend",
+  "name": "spotter-backend",
   "version": "1.0.0",
-  "description": "Todo App Backend",
+  "description": "Spotter App Backend",
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itayeylath/to-do-app-backend.git"
+    "url": "git+https://github.com/itayeylath/spotter-backend.git"
   },
   "keywords": [
-    "todo",
+    "spotter",
     "express",
     "typescript",
     "mongodb",
@@ -25,9 +25,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/itayeylath/to-do-app-backend/issues"
+    "url": "https://github.com/itayeylath/spotter-backend/issues"
   },
-  "homepage": "https://github.com/itayeylath/to-do-app-backend#readme",
+  "homepage": "https://github.com/itayeylath/spotter-backend#readme",
   "dependencies": {
     "express": "^4.18.2",
     "dotenv": "^16.0.3",
