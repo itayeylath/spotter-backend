@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IAMController } from "@/controllers/iam.controller";
+import * as IAMController from "@/controllers/iam.controller";
 
 class IAMService {
   private static instance: IAMService;
