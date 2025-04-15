@@ -43,11 +43,14 @@ ADMIN_UIDS=uid1,uid2
 Run the application in development mode with hot-reloading:
 
 ```bash
-# Build and start the container
+# Build and start the container (attached mode - shows logs in terminal)
 docker-compose -f docker-compose.dev.yml up
 
-# Or run in detached mode
+# Or run in background (detached mode - frees up terminal)
 docker-compose -f docker-compose.dev.yml up -d
+
+# If running in detached mode, view logs with:
+docker-compose -f docker-compose.dev.yml logs -f
 ```
 
 The server will be available at `http://localhost:3000`
@@ -141,5 +144,3 @@ spotter-backend/
 3. Submit a pull request
 
 ## License
-
-ISC
