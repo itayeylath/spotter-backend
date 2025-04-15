@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import adminRoutes from "@/routes/admin.routes";
-import errorHandler from "@/middlewares/error.middleware";
-import { logger } from "@/utils/logger";
+import adminRoutes from "./routes/admin.routes";
+import errorHandler from "./middlewares/error.middleware";
+import { logger } from "./utils/logger";
 
 // Import Firebase config to initialize it
 import "@/config/firebase.config";
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 // Admin routes
-app.use("/api/admin", adminRoutes);
+app.use("/admin", adminRoutes);
 
 // Error handling
 app.use(errorHandler);
